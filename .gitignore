@@ -1,0 +1,8 @@
+*.pyo
+*.pyc
+venv
+build
+lib
+include
+.project
+.pydevproject
