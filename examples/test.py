@@ -12,6 +12,9 @@ import pdb
 
 from datetime import datetime
 
+IP = '69.67.30.76'
+
+
 def handle(ws, payload_size=1024, delay=0.1, num_messages=100):
     """  This is the websocket handler function.  Note that we
     can dispatch based on path in here, too."""
@@ -73,8 +76,7 @@ def app(environ, start_response):
 
 
 
-server = pywsgi.WSGIServer(('127.0.0.1', 8001), app,
-        handler_class=WebSocketHandler)
+server = pywsgi.WSGIServer((IP, 8001), app, handler_class=WebSocketHandler)
 print 'waiting for connection...'
 server.serve_forever()
 
